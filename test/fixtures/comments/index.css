@@ -1,0 +1,37 @@
+/* purgecss start ignore */
+h1 {
+	color: blue;
+}
+
+h2 {
+	color: green;
+}
+/* purgecss end ignore */
+
+h3 {
+	/* purgecss ignore current */
+	color: red;
+}
+
+h4 {
+	color: purple;
+}
+
+/* purgecss start ignore */
+
+/* do not purge */
+
+h5 {
+	color: pink;
+}
+
+h6 {
+	color: lightcoral;
+}
+
+/* purgecss end ignore */
+
+/* purgecss ignore */
+dialog {
+	color: blue;
+}

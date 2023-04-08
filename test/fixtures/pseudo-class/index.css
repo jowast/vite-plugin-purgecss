@@ -1,0 +1,59 @@
+.bar:not(.foo) {
+	color: red;
+}
+
+.bar:not(.foo-bar) {
+	color: blue;
+}
+
+.some-item:nth-child(2n) {
+	color: green;
+}
+
+.some-item:nth-child(2n + 1) {
+	color: blue;
+}
+
+canvas {
+	display: none;
+}
+
+div:before {
+	color: black;
+}
+
+.row:after {
+	color: black;
+}
+
+.another-item:nth-child(2n + 1) {
+	color: green;
+}
+
+.another-item:nth-child(2n) {
+	font-size: 1rem;
+}
+
+.another-item:nth-of-type(n + 3) {
+	color: goldenrod;
+}
+
+.another-item:nth-of-type(-1n + 6) {
+	color: brown;
+}
+
+.another-item:nth-of-type(-n + 6) {
+	color: brown;
+}
+
+.unused:only-child() {
+	color: red;
+}
+
+.used:only-child() {
+	color: blue;
+}
+
+.odd-item:nth-child(odd) {
+	color: grey;
+}

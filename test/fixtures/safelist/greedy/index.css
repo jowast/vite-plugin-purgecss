@@ -1,0 +1,17 @@
+.card {
+}
+
+.card[data-v-test] {
+}
+
+.card.card--large {
+}
+
+.card[data-v-test].card--large {
+}
+
+.card .card-content {
+}
+
+.card[data-v-test] .card-content {
+}
