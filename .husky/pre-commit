@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# lint and format source code
+pnpm lint-staged --concurrent false
+
+# test source code
+pnpm run test

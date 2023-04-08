@@ -1,0 +1,75 @@
+{
+	"name": "@mojojoejo/vite-plugin-purgecss",
+	"version": "0.1.0",
+	"description": "Vite plugin for removing unused CSS from generated bundles with PurgeCSS.",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": [
+		"./dist/*"
+	],
+	"scripts": {
+		"prepare": "husky install",
+		"prepublishOnly": "pnpm run build",
+		"build": "tsup",
+		"build:dev": "pnpm run build --watch",
+		"test": "vitest run",
+		"test:ui": "pnpm run test --ui",
+		"test:coverage": "pnpm run test --coverage",
+		"test:dev": "vitest watch",
+		"test:dev-ui": "pnpm run dev --ui",
+		"lint": "eslint . --ext js,ts,cjs,mjs",
+		"lint:fix": "pnpm run lint --fix",
+		"format": "prettier './**/*.{js,ts,cjs,mjs}'",
+		"format:check": "pnpm run format --check",
+		"format:fix": "pnpm run format --write"
+	},
+	"lint-staged": {
+		"./**/*.{js,ts,cjs,mjs}": [
+			"pnpm run lint:fix"
+		],
+		"./**/*.{js,ts,cjs,mjs,json}": [
+			"pnpm run format:fix"
+		]
+	},
+	"keywords": [
+		"PurgeCSS",
+		"Vite",
+		"Vite Plugin"
+	],
+	"author": {
+		"name": "Joe Stanley",
+		"url": "https://joeknows.dev"
+	},
+	"license": "MIT",
+	"peerDependencies": {
+		"vite": "^3 || ^4"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.57.1",
+		"@typescript-eslint/parser": "^5.57.1",
+		"@vitest/coverage-c8": "^0.29.8",
+		"eslint": "^8.37.0",
+		"eslint-plugin-filenames": "^1.3.2",
+		"eslint-plugin-import": "^2.27.5",
+		"husky": "^8.0.0",
+		"lint-staged": "^13.2.0",
+		"prettier": "^2.8.7",
+		"prettier-cli": "^0.1.0",
+		"rollup": "^3.20.2",
+		"tsup": "^6.7.0",
+		"typescript": "^5.0.3",
+		"vite": "^4.2.1",
+		"vitest": "^0.29.8"
+	},
+	"dependencies": {
+		"purgecss": "^5.0.0"
+	}
+}
