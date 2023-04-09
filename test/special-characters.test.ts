@@ -1,7 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import { beforeAll, describe, expect, it } from "vitest";
-import { viteBuild } from "./util/vite-build";
+import { viteBuildCss } from "./util/vite-build";
 import pluginPurgeCss from "../src";
 
 import type { ExtractorResult } from "purgecss";
@@ -16,7 +16,7 @@ describe("purgecss special characters, with custom extractor", () => {
 		content.match(/[A-z0-9-:/]+/g) || [];
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [
+		const results = await viteBuildCss(root, [
 			pluginPurgeCss({
 				extractors: [
 					{

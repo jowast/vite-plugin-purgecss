@@ -2,7 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { beforeAll, describe, expect, it } from "vitest";
 import { findInCss } from "./util/css";
-import { viteBuild } from "./util/vite-build";
+import { viteBuildCss } from "./util/vite-build";
 import pluginPurgeCss from "../src";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -12,7 +12,7 @@ describe("purgecss ignore comments", () => {
 	let output: string;
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [pluginPurgeCss()]);
+		const results = await viteBuildCss(root, [pluginPurgeCss()]);
 		output = results["index.css"];
 	});
 

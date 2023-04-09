@@ -2,7 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { beforeAll, describe, it } from "vitest";
 import { findInCss, notFindInCss } from "./util/css";
-import { viteBuild } from "./util/vite-build";
+import { viteBuildCss } from "./util/vite-build";
 import pluginPurgeCss from "../src";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -13,7 +13,7 @@ describe("purgecss safelist string", () => {
 	const root = path.resolve(__dirname, "./fixtures/safelist");
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [
+		const results = await viteBuildCss(root, [
 			pluginPurgeCss({
 				safelist: ["random", "h1", "yep", "button"],
 			}),
@@ -32,7 +32,7 @@ describe("purgecss safelist regular expression", () => {
 	const root = path.resolve(__dirname, "./fixtures/safelist");
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [
+		const results = await viteBuildCss(root, [
 			pluginPurgeCss({
 				safelist: [/nav-/, /data-v-.*/],
 			}),
@@ -51,7 +51,7 @@ describe("purgecss safelist standard option", () => {
 	const root = path.resolve(__dirname, "./fixtures/safelist");
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [
+		const results = await viteBuildCss(root, [
 			pluginPurgeCss({
 				safelist: {
 					standard: ["random", "h1", "yep", "button", /nav-/, /data-v-.*/],
@@ -83,7 +83,7 @@ describe("purgecss safelist deep option", () => {
 	const root = path.resolve(__dirname, "./fixtures/safelist/deep");
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [
+		const results = await viteBuildCss(root, [
 			pluginPurgeCss({
 				safelist: {
 					deep: [/^card$/],
@@ -111,7 +111,7 @@ describe("purgecss safelist greedy option", () => {
 	const root = path.resolve(__dirname, "./fixtures/safelist/greedy");
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [
+		const results = await viteBuildCss(root, [
 			pluginPurgeCss({
 				safelist: {
 					greedy: [/data-v-.*/],
@@ -144,7 +144,7 @@ describe("purgecss safelist keyframes option", () => {
 	const root = path.resolve(__dirname, "./fixtures/safelist/keyframes");
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [
+		const results = await viteBuildCss(root, [
 			pluginPurgeCss({
 				safelist: {
 					keyframes: [/^scale/, "spin"],
@@ -173,7 +173,7 @@ describe("purgecss safelist variables option", () => {
 	const root = path.resolve(__dirname, "./fixtures/safelist/variables");
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [
+		const results = await viteBuildCss(root, [
 			pluginPurgeCss({
 				safelist: {
 					variables: [/^--b/, "--unused-color"],
@@ -199,7 +199,7 @@ describe("purgecss safelist blocklist option", () => {
 	const root = path.resolve(__dirname, "./fixtures/safelist/blocklist");
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [
+		const results = await viteBuildCss(root, [
 			pluginPurgeCss({
 				blocklist: ["h1", "yep", "button", /nav-/],
 			}),

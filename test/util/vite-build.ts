@@ -5,15 +5,14 @@ import type { OutputAsset, OutputChunk } from "rollup";
 import type { PluginOption } from "vite";
 
 /**
- * Bundle CSS assets for a project using Vite and PurgeCSS. Output files will
- * not be written to disk. All CSS file names will be returned without the
- * addition of a hash string.
+ * Bundle CSS assets for a project with Vite. Output files will not be written
+ * to disk. All CSS file names will be returned without the addition of a hash.
  *
  * @param root root directory of project to build
- * @param opts purgecss options
+ * @param plugins list of vite plugins for build
  * @returns map of css file name to bundled output
  */
-async function viteBuild(root: string, plugins: PluginOption[]) {
+export async function viteBuildCss(root: string, plugins: PluginOption[]) {
 	let results = await build({
 		root,
 		plugins,
@@ -64,5 +63,3 @@ async function viteBuild(root: string, plugins: PluginOption[]) {
 function isCssAsset(output: OutputChunk | OutputAsset): output is OutputAsset {
 	return output.type === "asset" && cssRegExp.test(output.fileName);
 }
-
-export { viteBuild };

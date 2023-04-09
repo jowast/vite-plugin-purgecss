@@ -1,7 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import { beforeAll, describe, expect, it } from "vitest";
-import { viteBuild } from "./util/vite-build";
+import { viteBuildCss } from "./util/vite-build";
 import pluginPurgeCss from "../src";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -11,7 +11,9 @@ describe("purgecss font-face", () => {
 	let output: string;
 
 	beforeAll(async () => {
-		const results = await viteBuild(root, [pluginPurgeCss({ fontFace: true })]);
+		const results = await viteBuildCss(root, [
+			pluginPurgeCss({ fontFace: true }),
+		]);
 		output = results["index.css"];
 	});
 
