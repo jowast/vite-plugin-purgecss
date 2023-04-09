@@ -1,6 +1,6 @@
 {
 	"name": "@mojojoejo/vite-plugin-purgecss",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Vite plugin for removing unused CSS from generated bundles with PurgeCSS.",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
