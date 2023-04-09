@@ -78,5 +78,8 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mojojoejo/vite-plugin-purgecss.git"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
