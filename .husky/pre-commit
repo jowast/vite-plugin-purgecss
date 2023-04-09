@@ -3,6 +3,3 @@
 
 # lint and format source code
 pnpm lint-staged --concurrent false
-
-# test source code
-pnpm run test
