@@ -1,6 +1,6 @@
 {
 	"name": "@mojojoejo/vite-plugin-purgecss",
-	"version": "0.1.0",
+	"version": "0.0.0-development",
 	"description": "Vite plugin for removing unused CSS from generated bundles with PurgeCSS.",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -29,7 +29,8 @@
 		"lint:fix": "pnpm run lint --fix",
 		"format": "prettier './**/*.{js,ts,cjs,mjs}'",
 		"format:check": "pnpm run format --check",
-		"format:fix": "pnpm run format --write"
+		"format:fix": "pnpm run format --write",
+		"release": "semantic-release"
 	},
 	"lint-staged": {
 		"./**/*.{js,ts,cjs,mjs}": [
@@ -53,6 +54,7 @@
 		"vite": "^3 || ^4"
 	},
 	"devDependencies": {
+		"@semantic-release/git": "^10.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.57.1",
 		"@typescript-eslint/parser": "^5.57.1",
 		"@vitest/coverage-c8": "^0.29.8",
@@ -64,6 +66,7 @@
 		"prettier": "^2.8.7",
 		"prettier-cli": "^0.1.0",
 		"rollup": "^3.20.2",
+		"semantic-release": "^21.0.1",
 		"tsup": "^6.7.0",
 		"typescript": "^5.0.3",
 		"vite": "^4.2.1",
@@ -71,5 +74,9 @@
 	},
 	"dependencies": {
 		"purgecss": "^5.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mojojoejo/vite-plugin-purgecss.git"
 	}
 }
