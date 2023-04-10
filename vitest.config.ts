@@ -5,6 +5,7 @@ export default defineConfig({
 		include: ["./**/*.{test,spec}.{js,ts,cjs,mjs}"],
 		coverage: {
 			include: ["src/**/*.{js,ts,cjs,mjs}"],
+			reporter: ["lcov", "text", "html"],
 		},
 	},
 });
