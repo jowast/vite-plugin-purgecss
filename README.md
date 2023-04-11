@@ -124,7 +124,7 @@ and local hashed class names as values. This feature allows
 default `content` array. Therefore, there should be no further configuration
 needed to support CSS Modules.
 
-If you would like to customize this behavior, see the [Options](/#-options)
+If you would like to customize this behavior, see the [Options](#%EF%B8%8F-options)
 section for more information on configuring Vite and PurgeCSS output.
 
 ## ⚙️ Options
